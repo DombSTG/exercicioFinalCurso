@@ -1,8 +1,8 @@
 let numarr = []
+let res = document.getElementById('res')
 
 function numero () {
     let nu = Number(document.getElementById('num').value)
-    let res = document.getElementById('res')
     let numero = document.getElementById('numero')
 
     if (nu < 1 || nu > 100) {
@@ -16,7 +16,37 @@ function numero () {
     } else {
         alert('Valor já adicionado anteriormente')
     }
+}
 
+function calc() {
+    numarr.sort()
+    let texto = ""
+
+    let maior = numarr[0]
+    let menor = numarr[0]
+    let soma = 0
+    let media
+
+    for (let i in numarr) {
+        if (numarr[i] > maior) {
+            maior = numarr[i]
+        } else if (numarr[i] < menor) {
+            menor = numarr[i]
+        }
+        
+        soma += numarr[i]
+    }
+
+        media = soma / numarr.length
+
+
+
+    texto += `<strong>Ao todo, temos ${numarr.length} números cadastrados.<br><br></strong>`
+    texto += `<strong>O maior valor informado foi ${maior}.<br><br></strong> `
+    texto += `<strong>O menor valor informado foi ${menor}.<br><br></strong>`
+    texto += `<strong>Somando todos os valores, temos ${soma}.<br><br></strong>`
+    texto += `<strong>A media dos valores digitados é ${media}</strong>`
+    res.innerHTML = texto
 
 
 }

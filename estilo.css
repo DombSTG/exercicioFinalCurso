@@ -23,3 +23,12 @@ footer {
     font-style: italic;
 
 }
+div {
+    margin-top: 10px;
+}
+#res {
+    margin-top: 20px;
+}
+select {
+    width: 150px;
+}
