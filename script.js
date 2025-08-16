@@ -16,6 +16,9 @@ function numero () {
     } else {
         alert('Valor já adicionado anteriormente')
     }
+
+    nu.value = ''
+    nu.focus()
 }
 
 function calc() {
@@ -27,14 +30,18 @@ function calc() {
     let soma = 0
     let media
 
-    for (let i in numarr) {
-        if (numarr[i] > maior) {
-            maior = numarr[i]
-        } else if (numarr[i] < menor) {
-            menor = numarr[i]
+    if (numarr.length == 0) {
+        alert("Adicione valores antes de finalizar")
+    } else {
+        for (let i in numarr) {
+            if (numarr[i] > maior) {
+                maior = numarr[i]
+            } else if (numarr[i] < menor) {
+                menor = numarr[i]
+            }
+            
+            soma += numarr[i]
         }
-        
-        soma += numarr[i]
     }
 
         media = soma / numarr.length
